@@ -1,0 +1,237 @@
+/* Base styles */
+:root {
+  --text-primary: #1a1a1a;
+  --text-secondary: #5c5c5c;
+  --link-color: #2d5a45;
+  --background: #f5f0e8;
+  --max-width: 640px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--background);
+  padding: 3rem 1.5rem;
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* Typography */
+h1 {
+  font-size: 2.75rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.02em;
+}
+
+h1 a {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+h1 a:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+  font-weight: 340;
+  font-size: 1rem;
+}
+
+/* Links */
+a {
+  font-size: 1rem;
+  color: var(--link-color);
+  text-decoration: none;
+  transition: text-decoration 0.15s ease;
+  font-weight: 400;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header/Name section */
+.header {
+  margin-bottom: 0;
+}
+
+.email {
+  font-size: 1.0rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
+/* Content sections */
+.section {
+  margin-bottom: 2.5rem;
+}
+
+.intro {
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+/* Top section with header and nav side by side */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+/* Navigation */
+nav {
+  text-align: right;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+nav a {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  background-color: var(--link-color);
+  color: var(--background);
+  padding: 0.2rem 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+nav a:not(.current) {
+  opacity: 0.5;
+}
+
+nav a:hover {
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+nav a.current {
+  opacity: 1;
+}
+
+nav a:first-child {
+  margin-top: 0.75rem;
+}
+
+/* Lists for writing/projects */
+.item-list {
+  list-style: none;
+}
+
+.item-list li {
+  margin-bottom: 0.75rem;
+}
+
+.item-list .title {
+  font-weight: 500;
+  margin-bottom: 0rem;
+}
+
+.item-list .description {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* Projects grid */
+.project {
+  margin-bottom: 1rem;
+}
+
+.project:target {
+  background-color: rgba(45, 90, 69, 0.1);
+  border-left: 3px solid var(--link-color);
+  padding-left: 0.75rem;
+  margin-left: -0.75rem;
+}
+
+.project img,
+.project video {
+  max-width: 100%;
+  border-radius: 4px;
+  margin-top: 0.75rem;
+}
+
+.video-row {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.video-row video {
+  flex: 1;
+  max-width: 50%;
+  margin-top: 0;
+}
+
+/* Paper listing */
+.paper {
+  margin-bottom: 1rem;
+}
+
+.paper .title {
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.paper .extra-links {
+  font-weight: 400;
+  text-decoration: underline;
+  margin-left: 1rem;
+}
+
+.paper .authors {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+.paper .venue {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+/* Utility */
+.muted {
+  color: var(--text-secondary);
+}
