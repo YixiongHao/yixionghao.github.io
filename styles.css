@@ -179,7 +179,8 @@ nav a:first-child {
   margin-bottom: 1rem;
 }
 
-.project:target {
+.project:target,
+.section h2:target {
   background-color: rgba(45, 90, 69, 0.1);
   border-left: 3px solid var(--link-color);
   padding-left: 0.75rem;
