@@ -275,6 +275,7 @@ nav a:first-child {
   margin-bottom: 0.25rem;
   color: var(--text-secondary);
   font-size: 1rem;
+  font-weight: 340;
 }
 
 /* Footer */
