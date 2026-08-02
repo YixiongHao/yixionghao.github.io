@@ -213,6 +213,14 @@ nav a:first-child {
   }
 }
 
+/* Phone widths: drop the headshot. At this size the 240px image crowds the
+   name and email rather than sitting beside them. */
+@media (max-width: 640px) {
+  .headshot {
+    display: none;
+  }
+}
+
 /* Lists for writing/projects */
 .item-list {
   list-style: none;
