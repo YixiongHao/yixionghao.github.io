@@ -5,6 +5,13 @@
   --link-color: #2d5a45;
   --background: #f5f0e8;
   --max-width: 640px;
+  --page-pad-top: 3rem;
+  /* Gap between the nav and the column, reused as its gap from the top of
+     the viewport once it sticks, so the two always match. */
+  --nav-gap: 0.75rem;
+  /* Drop applied to the headshot and the nav so both line up with the cap
+     height of the h1 rather than the top of its (taller) line box. */
+  --top-offset: 0.7rem;
 }
 
 * {
@@ -24,12 +31,13 @@ body {
   line-height: 1.6;
   color: var(--text-primary);
   background: var(--background);
-  padding: 3rem 1.5rem;
+  padding: var(--page-pad-top) 1.5rem;
 }
 
 main {
   max-width: var(--max-width);
   margin: 0 auto;
+  position: relative;   /* anchor for the nav, which sits outside the column */
 }
 
 /* Typography */
@@ -117,25 +125,39 @@ a:hover {
   margin-bottom: 2rem;
 }
 
-/* Navigation */
+/* Navigation. The rail is a full-height column just outside the right edge of
+   main; the nav is sticky inside it, so it scrolls with the text and then pins
+   once it is --nav-gap from the top. Sticky cannot do this alone: it stays in
+   normal flow, so it needs the rail to be positioned outside the column. */
+.nav-rail {
+  position: absolute;
+  top: var(--top-offset);
+  left: 100%;
+  margin-left: var(--nav-gap);
+  height: calc(100% - var(--top-offset));
+}
+
 nav {
-  text-align: right;
+  position: sticky;
+  top: var(--nav-gap);
+  text-align: left;
   line-height: 1.2;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 nav a {
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.25rem;
   background-color: var(--link-color);
   color: var(--background);
-  padding: 0.2rem 0.4rem;
+  padding: 0.25rem 0.5rem;
   text-transform: uppercase;
   letter-spacing: 0.03em;
+  white-space: nowrap;   /* keep multi-word titles on one line */
 }
 
 nav a:not(.current) {
@@ -152,7 +174,43 @@ nav a.current {
 }
 
 nav a:first-child {
-  margin-top: 0.75rem;
+  margin-top: 0;   /* nav's own top offset handles the alignment */
+}
+
+/* Home page headshot, sits at the top right of the main column.
+   margin-top optically aligns its top edge with the cap height of the h1
+   (the h1's line-height leaves dead space above the letterforms). */
+.headshot {
+  display: block;
+  flex: none;
+  width: 240px;
+  height: auto;
+  margin-top: var(--top-offset);
+  margin-right: 0.5rem;
+  border-radius: 6px;
+}
+
+/* Below this width there is no room beside the column, so the nav folds back
+   into the flow as a horizontal row instead of overflowing the viewport. */
+@media (max-width: 1050px) {
+  .nav-rail {
+    position: static;
+    height: auto;
+    margin: 0 0 2rem;
+  }
+
+  nav {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+
+  nav a,
+  nav a:first-child {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 /* Lists for writing/projects */
@@ -294,21 +352,37 @@ nav a:first-child {
   font-weight: 340;
 }
 
-/* Footer */
-.footer-note {
-  margin-top: 3rem;
+/* Bulleted list that matches .intro paragraphs (primary color, 340 weight).
+   padding-left plus a negative text-indent gives the hanging indent while
+   keeping normal inline flow. (Do not use flex here: every <a> would become
+   its own flex item and the paragraph would fragment at each link.)
+   The marker is a fixed-width inline-block so the indent lines up exactly. */
+.resource-list.intro-list li {
+  color: var(--text-primary);
+  font-weight: 340;
+  padding-left: 1.1rem;
+  text-indent: -1.1rem;
 }
 
-.footer-note hr {
+.resource-list.intro-list li::before {
+  display: inline-block;
+  width: 1.1rem;
+  margin-right: 0;
+  text-indent: 0;
+}
+
+/* Footer link row. Deliberately not flex: the separators are plain text
+   between the anchors, and flex would make each one its own item. */
+.site-links {
+  margin-top: 3rem;
+  font-size: 1rem;
+  color: var(--text-secondary);   /* the separating dots */
+  word-spacing: 0.25rem;          /* breathing room either side of each dot */
+}
+
+.site-links hr {
   border: none;
   border-top: 1px solid #c0c0c0;
   width: 60px;
   margin: 0 0 1rem 0;
-}
-
-.footer-note p {
-  font-size: 0.8rem;
-  color: #9a9a9a;
-  line-height: 1.5;
-  font-weight: 300;
 }
