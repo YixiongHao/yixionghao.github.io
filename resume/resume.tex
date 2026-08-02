@@ -1,0 +1,165 @@
+% Yixiong Hao - resume
+% Compile with XeLaTeX (needs Calibri, which ships with Windows):
+%     xelatex resume.tex
+% Use xelatex, not pdflatex -- the Calibri font requires it. Avoid latexmk
+% unless Perl is on PATH; MiKTeX does not bundle it. See README.md.
+
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage{fontspec}
+\usepackage[letterpaper,top=0.4in,bottom=0.4in,left=0.5in,right=0.5in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+
+% ---------------------------------------------------------------- fonts ----
+% Scale nudges the whole document; lower it slightly if you add content and
+% the resume spills onto a second page.
+\setmainfont[Scale=0.98]{Calibri}
+\linespread{0.94}
+
+% ---------------------------------------------------------------- links ----
+\definecolor{linkblue}{HTML}{0563C1}
+\hypersetup{
+  colorlinks=true,
+  urlcolor=linkblue,
+  linkcolor=linkblue,
+  pdftitle={Yixiong Hao - resume},
+  pdfauthor={Yixiong Hao},
+}
+% Underlined blue link, matching the original document
+\newcommand{\ulink}[2]{\href{#1}{\underline{#2}}}
+
+% ------------------------------------------------------------- sections ----
+\titleformat{\section}
+  {\normalfont\fontsize{12}{14}\selectfont}   % uppercase heading, regular weight
+  {}{0pt}{}[\vspace{-7pt}\rule{\textwidth}{0.6pt}]
+% Negative after-space cancels the interline glue the rule would otherwise
+% leave, so section content sits tight under the divider.
+\titlespacing*{\section}{0pt}{5pt}{-4pt}
+
+% --------------------------------------------------------------- macros ----
+% \entry{left-hand text}{right-hand text}
+\newcommand{\entry}[2]{%
+  \noindent\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}%
+    #1 & #2%
+  \end{tabular*}\par\vspace{0.5pt}}
+
+% Role | Organization ........................... dates
+\newcommand{\role}[4]{\entry{\textbf{#1} $\mid$ \ulink{#3}{\textbf{#2}}}{\textit{#4}}}
+
+% Paper title ................................... venue
+%   with the author list on the line below. Long author lists are elided as
+%   "first authors, ..., Y. Hao, ..., last author".
+\newcommand{\pub}[4]{%
+  \entry{\ulink{#2}{#1}}{\textit{\textbf{#3}}}%
+  #4\par\vspace{3pt}}
+
+% Tight bullet list
+\newenvironment{items}
+  {\begin{itemize}[leftmargin=1.4em,topsep=0pt,partopsep=0pt,parsep=0pt,itemsep=0pt,label=\textbullet]}
+  {\end{itemize}\vspace{1.5pt}}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% ============================================================== document ====
+\begin{document}
+
+% ---------------------------------------------------------------- header ---
+\begin{center}
+  {\fontsize{19}{22}\selectfont Yixiong Hao}\\[3pt]
+  yixiong\_hao@outlook.com $\mid$ (470)-457-3887 $\mid$
+  \ulink{https://yixiong.dev/}{Website} $\mid$
+  \ulink{https://www.linkedin.com/in/yixiong-hao/}{LinkedIn} $\mid$
+  \ulink{https://github.com/YixiongHao}{GitHub} $\mid$
+  \ulink{https://scholar.google.com/citations?user=TzkRf0QAAAAJ&hl=en}{Google Scholar}
+\end{center}
+\vspace{-9pt}
+
+% ------------------------------------------------------------- education ---
+\section*{EDUCATION}
+\entry{\textbf{Georgia Institute of Technology}}{Atlanta, Georgia}
+\entry{\textit{Bachelor of Science in Computer Science \& BSMS.} \textbf{GPA: 4.0}}{\textit{Jan 2024 -- May 2027}}
+\begin{items}
+  \item \textbf{Coursework:} DSA II, OOP, Objects \& Design, Systems \& Networks, Linear Algebra, Calculus III, AI, Deep Learning.
+\end{items}
+
+% ------------------------------------------------------------ experience ---
+\section*{EXPERIENCE}
+
+\role{Grantmaker (Astra Fellowship)}{Astralis Foundation}{https://astralisfoundation.org/}{Aug 2026 -- Jan 2027}
+\begin{items}
+  \item Grantmaker \#3, focusing on AI strategy and opportunities in Asia to reduce societal scale risks from AI.
+\end{items}
+
+\role{MLE Intern}{Gray Swan AI}{https://www.grayswan.ai/}{May 2026 -- Aug 2026}
+\begin{items}
+  \item Self directed research on LLM robustness to Indirect Prompt Injections + strategy and collaborations work to accelerate 3rd party evaluations.
+\end{items}
+
+\role{Co-founder and Research Manager}{Second Look Research}{https://secondlookresearch.com/}{March 2026 -- Present}
+\begin{items}
+  \item Raised \$600k+ USD to replicate and open source decision relevant empirical research in AI safety.
+  \item Co-owned organizational strategy, hiring pipeline, program design, and research management.
+\end{items}
+
+\role{Co-director, Advisor}{Georgia Tech AI Safety Initiative}{https://aisi.dev}{2024 -- Present}
+\begin{items}
+  \item Grew organizer headcount from 2 to 16, fellowship participants from 30 to 70+ per cohort, reached 1k+ students through events, members published 15+ papers at peer reviewed venues.
+  \item Placed 15+ members in full time equivalent roles at key organizations including METR, MATS, Anthropic, IAPS, Constellation.
+\end{items}
+
+% Two labs on one line, so this uses \entry directly rather than \role.
+\entry{\textbf{Researcher} $\mid$ \ulink{https://xrisk.uchicago.edu/}{\textbf{UChicago XLab}}, \ulink{https://www.pair.toronto.edu/}{\textbf{PAIR Lab @ GT}}}{\textit{May 2024 -- 2026}}
+\begin{items}
+  \item Proof of existence for a novel threat model involving \textbf{agentic misalignment in RLVR style post training} in collaboration with the Center for AI Safety.
+  \item Leading early mechanistic interpretability work on low level actuators policies like Vision-Language-Action models.
+\end{items}
+
+\role{Quantitative Finance Research Intern}{China Industrial Securities}{https://www.xyzq.com/}{Jun 2024 -- Aug 2024}
+\begin{items}
+  \item Trained the \textbf{deep momentum} strategy in the Chinese stock market, achieving a \textbf{1.80 Sharpe ratio} with a long-short portfolio in back-testing. Used TensorFlow to build a deep neural network that classified stocks into expected return deciles based on momentum factors and implemented downstream statistical processing.
+  \item \textbf{Optimized the proposed model to \textasciitilde20\% the original size} with grid search and no significant loss of performance.
+\end{items}
+
+% ----------------------------------------------------------- publications --
+\section*{SELECT PUBLICATIONS}
+
+\pub{Patterns and Mechanisms of Contrastive Activation Engineering}{https://arxiv.org/abs/2505.03189}{ICLR 2025 Workshop}
+  {\textbf{Y. Hao}, A. Panda, S. Shabalin, S. A. R. Ali}
+
+\pub{Interpreting Large Text-to-Image Diffusion Models with Dictionary Learning}{https://arxiv.org/abs/2505.24360}{CVPR 2025 Workshop}
+  {S. Shabalin, A. Panda, D. Kharlapenko, A. R. Ali, \textbf{Y. Hao}, A. Conmy}
+
+\pub{Shall We Play a Game? Language Models for Open-ended Wargames}{https://arxiv.org/abs/2509.17192}{EMNLP 2025 Workshop}
+  {G. Matlin, P. Mahajan, I. Song, \textbf{Y. Hao}, R. Bard, \ldots, M. Riedl}
+
+\pub{Evaluation Cards: An Interpretive Layer for AI Evaluation Reporting}{https://arxiv.org/abs/2606.09809}{arXiv Preprint}
+  {A. Ghosh, A. Reuel, J. Chim, \ldots, \textbf{Y. Hao}, \ldots, I. Solaiman}
+
+\pub{Prioritization of Risks from Artificial Intelligence: A Delphi Study of 272 International Experts}{https://arxiv.org/abs/2606.04490}{arXiv Preprint}
+  {A. K. Saeri, J. Graham, M. Noetel, \ldots, \textbf{Y. Hao}, \ldots, N. Thompson}
+
+% -------------------------------------------------------------- projects ---
+\section*{PROJECTS}
+
+\entry{\textbf{BuzzBot -- Gatech virtual advisor}}{2024}
+\begin{items}
+  \item RAG system with elastic search and tool-use to answer questions about all things Gatech.
+\end{items}
+
+\entry{\ulink{https://github.com/YixiongHao/spot}{Life-sized Quadruped robot}}{\textit{2023}}
+\begin{items}
+  \item Planned, designed, and built a fully functional robot dog with 3 DoF limbs and custom 3D printed body.
+  \item \textbf{Stack:} ESP32, Adafruit 16 channel controller, ToF sensors, C in Arduino IDE, inverse kinematics, trajectory planning.
+\end{items}
+
+% -------------------------------------------------------------- skills -----
+\section*{TECHNICAL SKILLS}
+\textbf{Programming Languages \& tools:} Python, C, Java, bash scripting, Git, Slurm, Docker, Claude Code, Django, Next.js, Agile, CI/CD.\\
+\textbf{AI \& ML:} PyTorch, TF, HuggingFace, NumPy, Pandas, LangChain, VeRL, reinforcement learning, evolutionary algorithms, NLP, data visualization, transformers, weights \& biases.
+
+\end{document}
