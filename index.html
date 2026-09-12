@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yixiong Hao</title>
+  <title data-zh="郝奕雄">Yixiong Hao</title>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-450SG1J37Q"></script>
   <script>
@@ -15,14 +15,15 @@
   <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="lang.js"></script>
 </head>
 <body>
   <main>
     <div class="top">
       <header class="header">
-        <h1>Yixiong Hao</h1>
+        <h1><span lang="en">Yixiong Hao</span><span lang="zh">郝奕雄</span></h1>
         <p class="email">yixiong_hao [at] outlook [dot] com</p>
       </header>
 
@@ -31,90 +32,133 @@
 
     <div class="nav-rail">
       <nav>
-        <a href="./" class="current">Home</a>
-        <a href="projects/">Side Quests</a>
-        <a href="writing/">Writing</a>
-        <a href="resources/">Resources</a>
+        <a href="./" class="current"><span lang="en">Home</span><span lang="zh">首页</span></a>
+        <a href="projects/"><span lang="en">Side Quests</span><span lang="zh">支线任务</span></a>
+        <a href="writing/"><span lang="en">Writing</span><span lang="zh">写作</span></a>
+        <a href="resources/"><span lang="en">Resources</span><span lang="zh">资源</span></a>
       </nav>
     </div>
 
+    <div class="lang-rail">
+      <div class="lang-toggle" role="group" aria-label="Language / 语言">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+      </div>
+    </div>
+
     <section class="section">
-      <p class="intro">
+      <p class="intro" lang="en">
         Hi, I'm Yixiong!
       </p>
-      <p class="intro">
+      <p class="intro" lang="zh">
+        你好，我是奕雄！
+      </p>
+      <p class="intro" lang="en">
         I study CS at Georgia Tech.  I work on technical research and strategy to reduce societal scale <a href="https://aistatement.com/" target="_blank">catastrophic risks</a> from highly general, increasingly superintelligent AI systems.
       </p>
-      <p class="intro">
+      <p class="intro" lang="zh">
+        我在佐治亚理工学院（Georgia Tech）学习计算机科学。我从事技术研究与战略工作，致力于降低高度通用、日益趋近超级智能的 AI 系统所带来的社会规模<a href="https://aistatement.com/" target="_blank">灾难性风险</a>。
+      </p>
+      <p class="intro" lang="en">
         I'm currently a grantmaker at The <a href="https://astralisfoundation.org/" target="_blank"><strong>Astralis Foundation</strong></a> through the Astra Fellowship, where I will be focusing on macro AI strategy and capacity building in Asia.  I'm also a co-founder of <a href="https://secondlookresearch.com/" target="_blank"><strong>Second Look Research</strong></a>, and an advisor to the <a href="https://aisi.dev" target="_blank"><strong>Georgia Tech AI Safety Initiative</strong></a>.
       </p>
-      <p class="intro">
+      <p class="intro" lang="zh">
+        我目前通过 Astra Fellowship 在 <a href="https://astralisfoundation.org/" target="_blank"><strong>Astralis Foundation</strong></a> 担任资助官（grantmaker），专注于宏观 AI 战略以及亚洲地区的能力建设。我也是 <a href="https://secondlookresearch.com/" target="_blank"><strong>Second Look Research</strong></a> 的联合创始人，并担任<a href="https://aisi.dev" target="_blank"><strong>佐治亚理工 AI 安全倡议</strong></a>（Georgia Tech AI Safety Initiative）的顾问。
+      </p>
+      <p class="intro" lang="en">
         Previously, I
       </p>
+      <p class="intro" lang="zh">
+        此前，我
+      </p>
       <ul class="resource-list intro-list">
-        <li>Ran the Georgia Tech AI Safety Initiative for 2 years.  We have produced <a href="https://docs.google.com/document/d/15szR_IwSvwndETzZ8SNKcxmuJCWvLVZeORoru9vaYWY/edit?tab=t.0#heading=h.i3i1gjly13f0" target="_blank">15+ peer reviewed publications</a> and helped 20+ people land FTE roles at key orgs such as METR, MATS, Anthropic, IAPS, and Constellation.  During my time there, I worked on <a href="https://arxiv.org/abs/2505.03189" target="_blank">activation engineering</a>, <a href="https://arxiv.org/abs/2505.24360" target="_blank">interpretability</a>, demo-ed AI jailbreaks at a <a href="projects/#congressional">congressional exhibition</a>, and co-authored an <a href="projects/#rfi">RFI response</a> to America's National AI Action plan.  I now advise GTAISI.</li>
+        <li lang="en">Ran the Georgia Tech AI Safety Initiative for 2 years.  We have produced <a href="https://docs.google.com/document/d/15szR_IwSvwndETzZ8SNKcxmuJCWvLVZeORoru9vaYWY/edit?tab=t.0#heading=h.i3i1gjly13f0" target="_blank">15+ peer reviewed publications</a> and helped 20+ people land FTE roles at key orgs such as METR, MATS, Anthropic, IAPS, and Constellation.  During my time there, I worked on <a href="https://arxiv.org/abs/2505.03189" target="_blank">activation engineering</a>, <a href="https://arxiv.org/abs/2505.24360" target="_blank">interpretability</a>, demo-ed AI jailbreaks at a <a href="projects/#congressional">congressional exhibition</a>, and co-authored an <a href="projects/#rfi">RFI response</a> to America's National AI Action plan.  I now advise GTAISI.</li>
+        <li lang="zh">领导佐治亚理工 AI 安全倡议（GTAISI）两年。我们产出了 <a href="https://docs.google.com/document/d/15szR_IwSvwndETzZ8SNKcxmuJCWvLVZeORoru9vaYWY/edit?tab=t.0#heading=h.i3i1gjly13f0" target="_blank">15 篇以上同行评审论文</a>，并帮助 20 多人在 METR、MATS、Anthropic、IAPS、Constellation 等重要机构获得全职职位。在此期间，我研究了<a href="https://arxiv.org/abs/2505.03189" target="_blank">激活工程</a>与<a href="https://arxiv.org/abs/2505.24360" target="_blank">可解释性</a>，在一次<a href="projects/#congressional">国会展览</a>上演示了 AI 越狱，并合著了一份针对美国国家 AI 行动计划的 <a href="projects/#rfi">RFI 回应</a>。我目前担任 GTAISI 的顾问。</li>
       </ul>
       <ul class="resource-list intro-list">
-        <li>Interned at <a href="https://www.grayswan.ai/" target="_blank"><strong>Gray Swan AI</strong></a>, where I analyzed trends in indirect prompt injections and worked on organizational strategy as a pre-deployment evaluator of frontier LLMs. </li>
+        <li lang="en">Interned at <a href="https://www.grayswan.ai/" target="_blank"><strong>Gray Swan AI</strong></a>, where I analyzed trends in indirect prompt injections and worked on organizational strategy as a pre-deployment evaluator of frontier LLMs. </li>
+        <li lang="zh">在 <a href="https://www.grayswan.ai/" target="_blank"><strong>Gray Swan AI</strong></a> 实习，分析间接提示注入（indirect prompt injection）的趋势，并作为前沿大模型的部署前评估方参与组织战略工作。</li>
       </ul>
       <ul class="resource-list intro-list">
-        <li>Was a research fellow at <a href="https://xrisk.uchicago.edu/" target="_blank"><strong>UChicago XLab</strong></a>, where I worked with <a href="https://safe.ai/" target="_blank"><strong>CAIS</strong></a> on model organisms of reward manipulation during RL.</li>
+        <li lang="en">Was a research fellow at <a href="https://xrisk.uchicago.edu/" target="_blank"><strong>UChicago XLab</strong></a>, where I worked with <a href="https://safe.ai/" target="_blank"><strong>CAIS</strong></a> on model organisms of reward manipulation during RL.</li>
+        <li lang="zh">在<a href="https://xrisk.uchicago.edu/" target="_blank"><strong>芝加哥大学 XLab</strong></a> 担任研究员，与 <a href="https://safe.ai/" target="_blank"><strong>CAIS</strong></a> 合作研究强化学习中奖励操纵的模型生物（model organisms）。</li>
       </ul>
-      <p class="intro">
+      <p class="intro" lang="en">
         Outside of work, I generally love being active.  I used to play competitive golf and table tennis. I also like checking out new cafes and restaurants!
       </p>
-      <p class="intro">
+      <p class="intro" lang="zh">
+        工作之外，我喜欢运动。我曾经打过竞技高尔夫和乒乓球。我也喜欢探店，尝试新的咖啡馆和餐厅！
+      </p>
+      <p class="intro" lang="en">
         Check out some of my amazing friends, collaborators, and mentors. <a href="https://parvmahajan.com/" target="_blank">Parv</a>, <a href="https://wlanderson.com/" target="_blank">Will</a>, <a href="https://zephaniahdev.com/" target="_blank">Zephy</a>, <a href="https://jasminexli.com/" target="_blank">Jasmine</a>, <a href="https://joneedssleep.github.io/" target="_blank">Jo</a>, <a href="https://andrewwei.info/" target="_blank">Andrew</a>, <a href="https://yeedrag.github.io/" target="_blank">Andy</a>, <a href="https://rociopv.com/" target="_blank">Rocio</a>, <a href="https://tzukitchan.com/" target="_blank">Tzu</a>, <a href="https://scholar.google.com/citations?user=fGeEmLQAAAAJ&hl=en" target="_blank">Mantas</a>, <a href="https://animesh.garg.tech/" target="_blank">Animesh</a>, <a href="https://kartikgo.github.io/" target="_blank">Kartik</a>, <a href="https://abdur-raheem.com" target="_blank">Abdur Raheem</a>, <a href="https://scholar.google.com/citations?user=y9aAz6IAAAAJ&hl=en" target="_blank">Max</a>.
       </p>
+      <p class="intro" lang="zh">
+        来认识一下我那些很棒的朋友、合作者和导师：<a href="https://parvmahajan.com/" target="_blank">Parv</a>、<a href="https://wlanderson.com/" target="_blank">Will</a>、<a href="https://zephaniahdev.com/" target="_blank">Zephy</a>、<a href="https://jasminexli.com/" target="_blank">Jasmine</a>、<a href="https://joneedssleep.github.io/" target="_blank">Jo</a>、<a href="https://andrewwei.info/" target="_blank">Andrew</a>、<a href="https://yeedrag.github.io/" target="_blank">Andy</a>、<a href="https://rociopv.com/" target="_blank">Rocio</a>、<a href="https://tzukitchan.com/" target="_blank">Tzu</a>、<a href="https://scholar.google.com/citations?user=fGeEmLQAAAAJ&hl=en" target="_blank">Mantas</a>、<a href="https://animesh.garg.tech/" target="_blank">Animesh</a>、<a href="https://kartikgo.github.io/" target="_blank">Kartik</a>、<a href="https://abdur-raheem.com" target="_blank">Abdur Raheem</a>、<a href="https://scholar.google.com/citations?user=y9aAz6IAAAAJ&hl=en" target="_blank">Max</a>。
+      </p>
 
-      <h2 id="research">Research</h2>
-      <p>
+      <h2 id="research"><span lang="en">Research</span><span lang="zh">研究</span></h2>
+      <p lang="en">
         I'm interested in understanding what and how general AI systems learn & generalize in order to develop scalable methods for alignment, evaluations, and control.  My latest projects are to do with agentic misalignment in RL with <a href="https://safe.ai/" target="_blank">CAIS</a>, and interpretability of VLA models with the <a href="https://www.pair.toronto.edu/" target="_blank">PAIR Lab</a>.  Some of my academic services include serving on the AAAI alignment track senior program committee, the <a href="https://leap.forecastingresearch.org/" target="_blank">Longitudinal Expert AI Panel (LEAP)</a>, and reviewing for workshops at ICLR, ICML, NeurIPS, and EMNLP.  Research blogs and unpublished work are under <a href="/writing">writing</a>.
+      </p>
+      <p lang="zh">
+        我希望理解通用 AI 系统学到了什么、如何学习并泛化，从而开发可扩展的对齐、评估与控制方法。我最近的项目包括与 <a href="https://safe.ai/" target="_blank">CAIS</a> 合作研究强化学习中的智能体失调（agentic misalignment），以及与 <a href="https://www.pair.toronto.edu/" target="_blank">PAIR Lab</a> 合作研究 VLA 模型的可解释性。我的学术服务包括担任 AAAI 对齐方向的高级程序委员会委员、<a href="https://leap.forecastingresearch.org/" target="_blank">纵向 AI 专家小组（LEAP）</a>成员，以及为 ICLR、ICML、NeurIPS 和 EMNLP 的研讨会审稿。研究博客和未发表的工作见<a href="/writing">写作</a>页面。
       </p>
 
       <div class="paper">
-        <div class="title"><a href="https://arxiv.org/abs/2608.10209" target="_blank">Evaluation-Conditioned Training: Teaching Models to Generalize to Stronger Oversight Regimes</a>
+        <div class="title" lang="en"><a href="https://arxiv.org/abs/2608.10209" target="_blank">Evaluation-Conditioned Training: Teaching Models to Generalize to Stronger Oversight Regimes</a>
+        <a href="https://x.com/alec_harris_x/status/2089111680320225590?s=20" class="extra-links" target="_blank">TLDR</a></div>
+        <div class="title" lang="zh"><a href="https://arxiv.org/abs/2608.10209" target="_blank">评估条件化训练：教模型泛化到更强的监督机制</a>
         <a href="https://x.com/alec_harris_x/status/2089111680320225590?s=20" class="extra-links" target="_blank">TLDR</a></div>
         <div class="authors">A. Harris, K. Corra, A. Chaudhury, <strong>Y. Hao</strong></div>
-        <div class="venue">arXiv preprint 2026</div>
+        <div class="venue"><span lang="en">arXiv preprint 2026</span><span lang="zh">arXiv 预印本 2026</span></div>
       </div>
 
       <div class="paper">
-        <div class="title"><a href="https://arxiv.org/abs/2606.09809" target="_blank">Evaluation Cards: An Interpretive Layer for AI Evaluation Reporting</a>
+        <div class="title" lang="en"><a href="https://arxiv.org/abs/2606.09809" target="_blank">Evaluation Cards: An Interpretive Layer for AI Evaluation Reporting</a>
+        <a href="https://huggingface.co/blog/evaleval/evaluation-cards-launch" class="extra-links" target="_blank">TLDR</a></div>
+        <div class="title" lang="zh"><a href="https://arxiv.org/abs/2606.09809" target="_blank">评估卡片：AI 评估报告的解释层</a>
         <a href="https://huggingface.co/blog/evaleval/evaluation-cards-launch" class="extra-links" target="_blank">TLDR</a></div>
         <div class="authors">A. Ghosh, A. Reuel, J. Chim, …, <strong>Y. Hao</strong>, …, I. Solaiman</div>
-        <div class="venue">arXiv preprint 2026</div>
+        <div class="venue"><span lang="en">arXiv preprint 2026</span><span lang="zh">arXiv 预印本 2026</span></div>
       </div>
 
       <div class="paper">
-        <div class="title"><a href="https://arxiv.org/abs/2606.04490" target="_blank">Prioritization of Risks from Artificial Intelligence: A Delphi Study of 272 International Experts</a>
+        <div class="title" lang="en"><a href="https://arxiv.org/abs/2606.04490" target="_blank">Prioritization of Risks from Artificial Intelligence: A Delphi Study of 272 International Experts</a>
+        <a href="https://x.com/PeterSlattery1/status/2062203174371414526?s=20" class="extra-links" target="_blank">TLDR</a></div>
+        <div class="title" lang="zh"><a href="https://arxiv.org/abs/2606.04490" target="_blank">人工智能风险的优先级排序：一项针对 272 位国际专家的德尔菲研究</a>
         <a href="https://x.com/PeterSlattery1/status/2062203174371414526?s=20" class="extra-links" target="_blank">TLDR</a></div>
         <div class="authors">A. K. Saeri, J. Graham, M. Noetel, …, <strong>Y. Hao</strong>, …, N. Thompson</div>
-        <div class="venue">arXiv preprint 2026</div>
+        <div class="venue"><span lang="en">arXiv preprint 2026</span><span lang="zh">arXiv 预印本 2026</span></div>
       </div>
 
       <div class="paper">
-        <div class="title"><a href="https://arxiv.org/abs/2505.03189" target="_blank">Patterns and Mechanisms of Contrastive Activation Engineering</a>
+        <div class="title" lang="en"><a href="https://arxiv.org/abs/2505.03189" target="_blank">Patterns and Mechanisms of Contrastive Activation Engineering</a>
+        <a href="https://x.com/Yixiong_Hao/status/1926504832296165775" class="extra-links" target="_blank">TLDR</a></div>
+        <div class="title" lang="zh"><a href="https://arxiv.org/abs/2505.03189" target="_blank">对比激活工程的模式与机制</a>
         <a href="https://x.com/Yixiong_Hao/status/1926504832296165775" class="extra-links" target="_blank">TLDR</a></div>
         <div class="authors"><strong>Y. Hao</strong>, A. Panda, S. Shabalin, S. A. R. Ali</div>
-        <div class="venue">ICLR 2025 Human-AI Co-evolution Workshop + 2 others </div>
+        <div class="venue"><span lang="en">ICLR 2025 Human-AI Co-evolution Workshop + 2 others </span><span lang="zh">ICLR 2025 Human-AI Co-evolution 研讨会及另外 2 个</span></div>
       </div>
 
       <div class="paper">
-        <div class="title"><a href="https://arxiv.org/abs/2505.24360" target="_blank">Interpreting Large Text-to-Image Diffusion Models with Dictionary Learning</a><a href="https://x.com/neverrixx/status/1943353695749452045" class="extra-links" target="_blank">TLDR</a></div>
+        <div class="title" lang="en"><a href="https://arxiv.org/abs/2505.24360" target="_blank">Interpreting Large Text-to-Image Diffusion Models with Dictionary Learning</a><a href="https://x.com/neverrixx/status/1943353695749452045" class="extra-links" target="_blank">TLDR</a></div>
+        <div class="title" lang="zh"><a href="https://arxiv.org/abs/2505.24360" target="_blank">用字典学习解释大型文生图扩散模型</a><a href="https://x.com/neverrixx/status/1943353695749452045" class="extra-links" target="_blank">TLDR</a></div>
         <div class="authors">S. Shabalin, A. Panda, D. Kharlapenko, A. R. Ali, <strong>Y. Hao</strong>, A. Conmy</div>
-        <div class="venue">CVPR 2025 XIV Workshop</div>
+        <div class="venue"><span lang="en">CVPR 2025 XIV Workshop</span><span lang="zh">CVPR 2025 XIV 研讨会</span></div>
       </div>
 
       <div class="paper">
-        <div class="title"><a href="https://arxiv.org/abs/2509.17192" target="_blank">Shall We Play a Game? Language Models for Open-ended Wargames</a>
+        <div class="title" lang="en"><a href="https://arxiv.org/abs/2509.17192" target="_blank">Shall We Play a Game? Language Models for Open-ended Wargames</a>
+        <a href="https://x.com/GlennMatlin/status/2009095829467091124?s=20" class="extra-links" target="_blank">TLDR</a></div>
+        <div class="title" lang="zh"><a href="https://arxiv.org/abs/2509.17192" target="_blank">来玩个游戏？面向开放式兵棋推演的语言模型</a>
         <a href="https://x.com/GlennMatlin/status/2009095829467091124?s=20" class="extra-links" target="_blank">TLDR</a></div>
         <div class="authors">G. Matlin, P. Mahajan, I. Song, <strong>Y. Hao</strong>, R. Bard, S. Topp, E. Montoya, M. R. Parwani, S. Shetty, M. Riedl</div>
-        <div class="venue">EMNLP 2025 Wordplay Workshop</div>
+        <div class="venue"><span lang="en">EMNLP 2025 Wordplay Workshop</span><span lang="zh">EMNLP 2025 Wordplay 研讨会</span></div>
       </div>
 
       <div class="paper">
-        <div class="title"><a href="https://www.atlantis-press.com/proceedings/ic-icaie-22/125981040" target="_blank">Applications of Artificial Intelligence in Golf</a></div>
+        <div class="title" lang="en"><a href="https://www.atlantis-press.com/proceedings/ic-icaie-22/125981040" target="_blank">Applications of Artificial Intelligence in Golf</a></div>
+        <div class="title" lang="zh"><a href="https://www.atlantis-press.com/proceedings/ic-icaie-22/125981040" target="_blank">人工智能在高尔夫中的应用</a></div>
         <div class="authors"><strong>Y. Hao</strong></div>
         <div class="venue">ICAIE 2022</div>
       </div>
@@ -123,12 +167,12 @@
     <footer class="site-links">
       <hr>
       <a href="https://x.com/Yixiong_Hao" target="_blank">X</a> ·
-      <a href="https://scholar.google.com/citations?user=TzkRf0QAAAAJ&hl=en" target="_blank">Gscholar</a> ·
+      <a href="https://scholar.google.com/citations?user=TzkRf0QAAAAJ&hl=en" target="_blank"><span lang="en">Gscholar</span><span lang="zh">谷歌学术</span></a> ·
       <a href="https://substack.com/@yixiong" target="_blank">Substack</a> ·
       <a href="https://github.com/YixiongHao" target="_blank">GitHub</a> ·
       <a href="https://www.linkedin.com/in/yixiong-hao/" target="_blank">LinkedIn</a> ·
       <a href="https://curius.app/yixiong-hao" target="_blank">Curius</a> ·
-      <a href="Yixiong Hao - resume.pdf" target="_blank">Resume</a>
+      <a href="Yixiong Hao - resume.pdf" target="_blank"><span lang="en">Resume</span><span lang="zh">简历</span></a>
     </footer>
   </main>
 </body>

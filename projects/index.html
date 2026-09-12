@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Side Quests - Yixiong Hao</title>
+  <title data-zh="支线任务 - 郝奕雄">Side Quests - Yixiong Hao</title>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-450SG1J37Q"></script>
   <script>
@@ -15,25 +15,33 @@
   <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
+  <script src="../lang.js"></script>
 </head>
 <body>
   <main>
     <div class="top">
       <header class="header">
-        <h1><a href="../">Yixiong Hao</a></h1>
+        <h1><a href="../"><span lang="en">Yixiong Hao</span><span lang="zh">郝奕雄</span></a></h1>
       </header>
 
     </div>
 
     <div class="nav-rail">
       <nav>
-        <a href="../">Home</a>
-        <a href="./" class="current">Side Quests</a>
-        <a href="../writing/">Writing</a>
-        <a href="../resources/">Resources</a>
+        <a href="../"><span lang="en">Home</span><span lang="zh">首页</span></a>
+        <a href="./" class="current"><span lang="en">Side Quests</span><span lang="zh">支线任务</span></a>
+        <a href="../writing/"><span lang="en">Writing</span><span lang="zh">写作</span></a>
+        <a href="../resources/"><span lang="en">Resources</span><span lang="zh">资源</span></a>
       </nav>
+    </div>
+
+    <div class="lang-rail">
+      <div class="lang-toggle" role="group" aria-label="Language / 语言">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+      </div>
     </div>
 
     <section class="section">
@@ -41,62 +49,91 @@
 
       <div class="project">
         <div class="title"><a href="https://project-synesis.org" target="#">Project Synesis</a></div>
-        <p class="description">
+        <p class="description" lang="en">
           An interactive dashboard for AI policy and strategy researchers to explore the positions of stakeholders in foreign regulatory bodies.
+        </p>
+        <p class="description" lang="zh">
+          一个面向 AI 政策与战略研究者的交互式仪表盘，用于探索各国监管机构中利益相关方的立场。
         </p>
       </div>
 
       <div class="project">
         <div class="title"><a href="https://evals-consensus.ai" target="#">Eval Consensus</a></div>
-        <p class="description">
-          A cross-sector Delphi panel of researchers, auditors, industry, standards bodies, and government identified 27 shared practices for high-quality AI evaluations. We recommend evaluation practitioners consider and adopt at least these 27 practices where relevant for constructing, documenting, maintaining, using, and reporting the results of AI evaluations. 
+        <p class="description" lang="en">
+          A cross-sector Delphi panel of researchers, auditors, industry, standards bodies, and government identified 27 shared practices for high-quality AI evaluations. We recommend evaluation practitioners consider and adopt at least these 27 practices where relevant for constructing, documenting, maintaining, using, and reporting the results of AI evaluations.
+        </p>
+        <p class="description" lang="zh">
+          一个由研究者、审计方、产业界、标准机构和政府组成的跨领域德尔菲专家组，确定了 27 条高质量 AI 评估的共识实践。我们建议评估从业者在构建、记录、维护、使用和报告 AI 评估结果时，至少考虑并采纳这 27 条相关实践。
         </p>
       </div>
 
       <div class="project">
-        <div class="title"><a href="media/[FINAL] NIST RFI_ Best Practices for Automated Benchmark Evaluations (NIST 800-2) - Google Docs.pdf" target="_blank">EvalEval Coalition response to NIST AI 800-2</a></div>
-        <p class="description">
+        <div class="title" lang="en"><a href="media/[FINAL] NIST RFI_ Best Practices for Automated Benchmark Evaluations (NIST 800-2) - Google Docs.pdf" target="_blank">EvalEval Coalition response to NIST AI 800-2</a></div>
+        <div class="title" lang="zh"><a href="media/[FINAL] NIST RFI_ Best Practices for Automated Benchmark Evaluations (NIST 800-2) - Google Docs.pdf" target="_blank">EvalEval 联盟对 NIST AI 800-2 的回应</a></div>
+        <p class="description" lang="en">
           Contributed to the <a href="https://evaleval.github.io/" target="#">EvalEval Coalition</a>'s response to NIST's RFI on best practices for automated benchmark evaluations (Gaps 6, 7, 8 and editorial decisions).  As of April 2026, our response was acknowledged by NIST CAISI staff Drew Keller.
+        </p>
+        <p class="description" lang="zh">
+          参与撰写 <a href="https://evaleval.github.io/" target="#">EvalEval 联盟</a>对 NIST 关于自动化基准评估最佳实践信息征询（RFI）的回应（负责 Gap 6、7、8 及编辑决策）。截至 2026 年 4 月，我们的回应已获 NIST CAISI 工作人员 Drew Keller 的认可。
         </p>
       </div>
 
       <h2>2025</h2>
 
       <div class="project" id="congressional">
-        <div class="title"><a href="https://x.com/Yixiong_Hao/status/1894159261040566697?s=20" target="#">Congressional exhibition on advanced AI capabilities</a></div>
-        <p class="description">
+        <div class="title" lang="en"><a href="https://x.com/Yixiong_Hao/status/1894159261040566697?s=20" target="#">Congressional exhibition on advanced AI capabilities</a></div>
+        <div class="title" lang="zh"><a href="https://x.com/Yixiong_Hao/status/1894159261040566697?s=20" target="#">关于前沿 AI 能力的国会展览</a></div>
+        <p class="description" lang="en">
           Lead a Georgia Tech team to demonstrate jailbreak risks to congressional staffers on Capitol Hill.  We made a <a href="https://multi-llm-interface.vercel.app/" target="#">red teaming game</a> for staffers to play.
+        </p>
+        <p class="description" lang="zh">
+          带领佐治亚理工团队在国会山向国会工作人员演示越狱风险。我们为工作人员制作了一个<a href="https://multi-llm-interface.vercel.app/" target="#">红队游戏</a>。
         </p>
         <img src="media/caipex.jpg" alt="Congressional exhibition" style="display: block; margin: 1rem auto 0; width: 65%; max-width: 100%;">
       </div>
 
       <div class="project" id="rfi">
-        <div class="title"><a href="https://docs.google.com/document/d/1p-mOQTscqrnTDjfuUNyF841Fv8DWavy4Da6I5xT7tX4/edit?tab=t.lfjug3ueet61" target="#">AI R&D Federal RFI response</a></div>
-        <p class="description">
+        <div class="title" lang="en"><a href="https://docs.google.com/document/d/1p-mOQTscqrnTDjfuUNyF841Fv8DWavy4Da6I5xT7tX4/edit?tab=t.lfjug3ueet61" target="#">AI R&D Federal RFI response</a></div>
+        <div class="title" lang="zh"><a href="https://docs.google.com/document/d/1p-mOQTscqrnTDjfuUNyF841Fv8DWavy4Da6I5xT7tX4/edit?tab=t.lfjug3ueet61" target="#">联邦 AI 研发 RFI 回应</a></div>
+        <p class="description" lang="en">
           <a href="https://parvmahajan.com/">Parv</a> and I authored a response to the USG's 2025 AI R&D Request For Information.  Our recommendations on control, evaluation, and interpretability research were echoed in <a href="https://www.whitehouse.gov/wp-content/uploads/2025/07/Americas-AI-Action-Plan.pdf">America's AI Action Plan</a>
+        </p>
+        <p class="description" lang="zh">
+          <a href="https://parvmahajan.com/">Parv</a> 和我撰写了对美国政府 2025 年 AI 研发信息征询（RFI）的回应。我们在控制、评估和可解释性研究方面的建议在<a href="https://www.whitehouse.gov/wp-content/uploads/2025/07/Americas-AI-Action-Plan.pdf">《美国 AI 行动计划》</a>中得到了呼应。
         </p>
       </div>
 
       <div class="project" id="makerspace">
-        <div class="title"><a href="https://coe.gatech.edu/academics/ai-for-engineering/ai-makerspace" target="#">Rolling out Georgia Tech's AI Makerspace</a></div>
-        <p class="description">
+        <div class="title" lang="en"><a href="https://coe.gatech.edu/academics/ai-for-engineering/ai-makerspace" target="#">Rolling out Georgia Tech's AI Makerspace</a></div>
+        <div class="title" lang="zh"><a href="https://coe.gatech.edu/academics/ai-for-engineering/ai-makerspace" target="#">推动佐治亚理工 AI Makerspace 上线</a></div>
+        <p class="description" lang="en">
           I led the ethics and responsible use sub-committee to work out the terms of use, levels of access, and made some demos for students.  The makerspace is an educational GPU cluster with ~300 H100/200s.
+        </p>
+        <p class="description" lang="zh">
+          我领导伦理与负责任使用小组委员会，制定使用条款和访问权限层级，并为学生制作了一些演示。该 Makerspace 是一个拥有约 300 张 H100/H200 的教学用 GPU 集群。
         </p>
       </div>
 
       <div class="project">
         <div class="title"><a href="https://www.startup.exchange/" target="#">Startup Exchange</a></div>
-        <p class="description">
+        <p class="description" lang="en">
           For a semester, I was the director of events for this community of entrepreneurs and builders at Georgia Tech.  We regularly hosted large scale events such as hackathons, pitch competitions, and fireside chats.
+        </p>
+        <p class="description" lang="zh">
+          我曾担任这个佐治亚理工创业者与创造者社区的活动总监一个学期。我们定期举办黑客马拉松、路演比赛和炉边谈话等大型活动。
         </p>
       </div>
 
       <h2>*-2024</h2>
 
       <div class="project">
-        <div class="title"><a href="https://github.com/YixiongHao/spot" target="#">Quadruped robot</a></div>
-        <p class="description">
+        <div class="title" lang="en"><a href="https://github.com/YixiongHao/spot" target="#">Quadruped robot</a></div>
+        <div class="title" lang="zh"><a href="https://github.com/YixiongHao/spot" target="#">四足机器人</a></div>
+        <p class="description" lang="en">
           A robot dog inspired by Boston Dynamics' Spot with 3DoF per limb and controlled by an ESP32.  I had a great time learning basic CAD, electronics, and inverse kinematics.
+        </p>
+        <p class="description" lang="zh">
+          一只受波士顿动力 Spot 启发的机器狗，每条腿 3 个自由度，由 ESP32 控制。学习基础 CAD、电子和逆运动学的过程非常有趣。
         </p>
         <div class="video-row">
           <video controls>
@@ -109,16 +146,23 @@
       </div>
 
       <div class="project">
-        <div class="title"><a href="media/Physics EE [FINAL].pdf" target="_blank">Rigid body model of a golf shot</a></div>
-        <p class="description">
+        <div class="title" lang="en"><a href="media/Physics EE [FINAL].pdf" target="_blank">Rigid body model of a golf shot</a></div>
+        <div class="title" lang="zh"><a href="media/Physics EE [FINAL].pdf" target="_blank">高尔夫击球的刚体模型</a></div>
+        <p class="description" lang="en">
           IB Physics EE.  An original, simplistic model based on high school physics that predicts reality surprisingly well.
+        </p>
+        <p class="description" lang="zh">
+          IB 物理拓展论文。一个基于高中物理的原创简化模型，对现实的预测出奇地准确。
         </p>
       </div>
 
       <div class="project">
         <div class="title"><a href="#">DeStress</a></div>
-        <p class="description">
+        <p class="description" lang="en">
           Built New Zealand's largest peer support and tutoring community for the IB Diploma during my gap year out of high school.  Supported hundreds of students and paired 30+ students with tutors.
+        </p>
+        <p class="description" lang="zh">
+          在高中毕业后的间隔年里，创建了新西兰最大的 IB 文凭同伴支持与辅导社区。帮助了数百名学生，并为 30 多名学生匹配了辅导老师。
         </p>
       </div>
     </section>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Writing - Yixiong Hao</title>
+  <title data-zh="写作 - 郝奕雄">Writing - Yixiong Hao</title>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-450SG1J37Q"></script>
   <script>
@@ -15,104 +15,141 @@
   <link rel="icon" href="/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
+  <script src="../lang.js"></script>
 </head>
 <body>
   <main>
     <div class="top">
       <header class="header">
-        <h1><a href="../">Yixiong Hao</a></h1>
+        <h1><a href="../"><span lang="en">Yixiong Hao</span><span lang="zh">郝奕雄</span></a></h1>
       </header>
 
     </div>
 
     <div class="nav-rail">
       <nav>
-        <a href="../">Home</a>
-        <a href="../projects/">Side Quests</a>
-        <a href="./" class="current">Writing</a>
-        <a href="../resources/">Resources</a>
+        <a href="../"><span lang="en">Home</span><span lang="zh">首页</span></a>
+        <a href="../projects/"><span lang="en">Side Quests</span><span lang="zh">支线任务</span></a>
+        <a href="./" class="current"><span lang="en">Writing</span><span lang="zh">写作</span></a>
+        <a href="../resources/"><span lang="en">Resources</span><span lang="zh">资源</span></a>
       </nav>
     </div>
 
+    <div class="lang-rail">
+      <div class="lang-toggle" role="group" aria-label="Language / 语言">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+      </div>
+    </div>
+
     <section class="section">
-      <p class="intro">
-        I write to improve my thinking, and I don't do it as much as I should.  I cross-post on <a href="https://substack.com/@yixiong" target="#">Substack</a> and <a href="https://www.lesswrong.com/users/yix" target="#">LessWrong</a>.
+      <p class="intro" lang="en">
+        I write about technical AI safety and sometimes recent events.  I cross-post on <a href="https://substack.com/@yixiong" target="#">Substack</a> and <a href="https://www.lesswrong.com/users/yix" target="#">LessWrong</a>.
+      </p>
+      <p class="intro" lang="zh">
+        我主要写技术性 AI 安全相关的内容，偶尔也聊聊时事。我会同步发布在 <a href="https://substack.com/@yixiong" target="#">Substack</a> 和 <a href="https://www.lesswrong.com/users/yix" target="#">LessWrong</a>。
       </p>
       <h2>2026</h2>
       <ul class="item-list dated-list">
         <li>
-          <span class="date">Sep 6</span>
-          <div class="title"><a href="https://www.lesswrong.com/posts/5qrywHdJp8tg3roRc/peer-preservation-in-llms-a-replication-and-deep-dive" target="#">Peer Preservation in LLMs: A Replication And Deep Dive</a></div>
-          <div class="description">Second Look research blog</div>
+          <span class="date"><span lang="en">Sep 6</span><span lang="zh">9月6日</span></span>
+          <div class="title" lang="en"><a href="https://www.lesswrong.com/posts/5qrywHdJp8tg3roRc/peer-preservation-in-llms-a-replication-and-deep-dive" target="#">Peer Preservation in LLMs: A Replication And Deep Dive</a></div>
+          <div class="title" lang="zh"><a href="https://www.lesswrong.com/posts/5qrywHdJp8tg3roRc/peer-preservation-in-llms-a-replication-and-deep-dive" target="#">大模型中的同伴保护：复现与深入分析</a></div>
+          <div class="description" lang="en">Second Look research blog</div>
+          <div class="description" lang="zh">Second Look 研究博客</div>
         </li>
         <li>
-          <span class="date">Aug 15</span>
-          <div class="title"><a href="https://www.lesswrong.com/posts/oKxc8maZGtnzgpNzx/rerunning-ai-safety-papers-on-every-frontier-release-would-1" target="#">Rerunning AI safety papers on every frontier release would be pretty easy and valuable</a></div>
-          <div class="description">Position</div>
+          <span class="date"><span lang="en">Aug 15</span><span lang="zh">8月15日</span></span>
+          <div class="title" lang="en"><a href="https://www.lesswrong.com/posts/oKxc8maZGtnzgpNzx/rerunning-ai-safety-papers-on-every-frontier-release-would-1" target="#">Rerunning AI safety papers on every frontier release would be pretty easy and valuable</a></div>
+          <div class="title" lang="zh"><a href="https://www.lesswrong.com/posts/oKxc8maZGtnzgpNzx/rerunning-ai-safety-papers-on-every-frontier-release-would-1" target="#">在每个前沿模型发布时重跑 AI 安全论文，既容易又有价值</a></div>
+          <div class="description" lang="en">Position</div>
+          <div class="description" lang="zh">立场文章</div>
         </li>
         <li>
-          <span class="date">Jul 30</span>
-          <div class="title"><a href="https://www.lesswrong.com/posts/Dvqmgfeu2KDF7uMkx/internal-state-control-is-a-general-property-of-llms" target="#">Internal State Control is a General Property of LLMs</a></div>
-          <div class="description">Second Look research blog</div>
+          <span class="date"><span lang="en">Jul 30</span><span lang="zh">7月30日</span></span>
+          <div class="title" lang="en"><a href="https://www.lesswrong.com/posts/Dvqmgfeu2KDF7uMkx/internal-state-control-is-a-general-property-of-llms" target="#">Internal State Control is a General Property of LLMs</a></div>
+          <div class="title" lang="zh"><a href="https://www.lesswrong.com/posts/Dvqmgfeu2KDF7uMkx/internal-state-control-is-a-general-property-of-llms" target="#">内部状态控制是大模型的普遍属性</a></div>
+          <div class="description" lang="en">Second Look research blog</div>
+          <div class="description" lang="zh">Second Look 研究博客</div>
         </li>
         <li>
-          <span class="date">Jul 24</span>
-          <div class="title"><a href="https://www.lesswrong.com/posts/ywrdwTFk2dZmCFzAP/where-does-hint-following-and-concealment-arise-a-case-study" target="#">Where does hint-following and concealment arise? A case study on OLMo-3 checkpoints</a></div>
-          <div class="description">Second Look research blog</div>
+          <span class="date"><span lang="en">Jul 24</span><span lang="zh">7月24日</span></span>
+          <div class="title" lang="en"><a href="https://www.lesswrong.com/posts/ywrdwTFk2dZmCFzAP/where-does-hint-following-and-concealment-arise-a-case-study" target="#">Where does hint-following and concealment arise? A case study on OLMo-3 checkpoints</a></div>
+          <div class="title" lang="zh"><a href="https://www.lesswrong.com/posts/ywrdwTFk2dZmCFzAP/where-does-hint-following-and-concealment-arise-a-case-study" target="#">提示跟随与隐瞒行为从何而来？OLMo-3 检查点案例研究</a></div>
+          <div class="description" lang="en">Second Look research blog</div>
+          <div class="description" lang="zh">Second Look 研究博客</div>
         </li>
         <li>
-          <span class="date">Jul 24</span>
-          <div class="title"><a href="https://www.lesswrong.com/posts/DgLGD3A5CZXH7hbzP/georgia-tech-ai-safety-initiative-retrospective-2025-2026" target="#">Georgia Tech AI Safety Initiative Retrospective 2025-2026</a></div>
-          <div class="description">Organizational update from Georgia Tech AISI</div>
+          <span class="date"><span lang="en">Jul 24</span><span lang="zh">7月24日</span></span>
+          <div class="title" lang="en"><a href="https://www.lesswrong.com/posts/DgLGD3A5CZXH7hbzP/georgia-tech-ai-safety-initiative-retrospective-2025-2026" target="#">Georgia Tech AI Safety Initiative Retrospective 2025-2026</a></div>
+          <div class="title" lang="zh"><a href="https://www.lesswrong.com/posts/DgLGD3A5CZXH7hbzP/georgia-tech-ai-safety-initiative-retrospective-2025-2026" target="#">佐治亚理工 AI 安全倡议 2025-2026 回顾</a></div>
+          <div class="description" lang="en">Organizational update from Georgia Tech AISI</div>
+          <div class="description" lang="zh">佐治亚理工 AISI 组织动态</div>
         </li>
         <li>
-          <span class="date">Jul 15</span>
-          <div class="title"><a href="https://www.lesswrong.com/posts/AoBTiL7XRRpwpev8p/llm-cots-remain-monitorable-when-being-unfaithful-requires" target="#">LLM CoTs remain monitorable when being unfaithful requires computation</a></div>
-          <div class="description">Second Look research blog</div>
+          <span class="date"><span lang="en">Jul 15</span><span lang="zh">7月15日</span></span>
+          <div class="title" lang="en"><a href="https://www.lesswrong.com/posts/AoBTiL7XRRpwpev8p/llm-cots-remain-monitorable-when-being-unfaithful-requires" target="#">LLM CoTs remain monitorable when being unfaithful requires computation</a></div>
+          <div class="title" lang="zh"><a href="https://www.lesswrong.com/posts/AoBTiL7XRRpwpev8p/llm-cots-remain-monitorable-when-being-unfaithful-requires" target="#">当不忠实需要计算时，大模型的思维链仍然可监控</a></div>
+          <div class="description" lang="en">Second Look research blog</div>
+          <div class="description" lang="zh">Second Look 研究博客</div>
         </li>
         <li>
-          <span class="date">Mar 19</span>
-          <div class="title"><a href="https://www.lesswrong.com/posts/KjZPBes8MsoBFTHR3/teaching-models-to-dream-of-better-monitors-through-monitor" target="#">Teaching models to dream of better monitors through Monitor Sensitive Training</a></div>
-          <div class="description">Research blog</div>
+          <span class="date"><span lang="en">Mar 19</span><span lang="zh">3月19日</span></span>
+          <div class="title" lang="en"><a href="https://www.lesswrong.com/posts/KjZPBes8MsoBFTHR3/teaching-models-to-dream-of-better-monitors-through-monitor" target="#">Teaching models to dream of better monitors through Monitor Sensitive Training</a></div>
+          <div class="title" lang="zh"><a href="https://www.lesswrong.com/posts/KjZPBes8MsoBFTHR3/teaching-models-to-dream-of-better-monitors-through-monitor" target="#">通过监控敏感训练让模型梦见更好的监控器</a></div>
+          <div class="description" lang="en">Research blog</div>
+          <div class="description" lang="zh">研究博客</div>
         </li>
         <li>
-          <span class="date">Mar 1</span>
-          <div class="title"><a href="https://yixiong.substack.com/p/why-ai-wont-go-well-unless-sensible" target="#">Why AI won't go well unless sensible people like you speak up and act.</a></div>
-          <div class="description">A response to the Anthropic & DoW conflict</div>
+          <span class="date"><span lang="en">Mar 1</span><span lang="zh">3月1日</span></span>
+          <div class="title" lang="en"><a href="https://yixiong.substack.com/p/why-ai-wont-go-well-unless-sensible" target="#">Why AI won't go well unless sensible people like you speak up and act.</a></div>
+          <div class="title" lang="zh"><a href="https://yixiong.substack.com/p/why-ai-wont-go-well-unless-sensible" target="#">为什么除非像你这样理智的人发声并行动，AI 不会走向好的结局</a></div>
+          <div class="description" lang="en">A response to the Anthropic & DoW conflict</div>
+          <div class="description" lang="zh">对 Anthropic 与国防部（DoW）冲突的回应</div>
         </li>
         <li>
-          <span class="date">Jan 11</span>
-          <div class="title"><a href="https://www.lesswrong.com/posts/XC28DmEYPLqfwc8tf/we-need-a-better-way-to-evaluate-emergent-misalignment" target="#">We need a better way to evaluate emergent misalignment</a></div>
-          <div class="description">Research blog</div>
+          <span class="date"><span lang="en">Jan 11</span><span lang="zh">1月11日</span></span>
+          <div class="title" lang="en"><a href="https://www.lesswrong.com/posts/XC28DmEYPLqfwc8tf/we-need-a-better-way-to-evaluate-emergent-misalignment" target="#">We need a better way to evaluate emergent misalignment</a></div>
+          <div class="title" lang="zh"><a href="https://www.lesswrong.com/posts/XC28DmEYPLqfwc8tf/we-need-a-better-way-to-evaluate-emergent-misalignment" target="#">我们需要更好的方法来评估涌现式失调</a></div>
+          <div class="description" lang="en">Research blog</div>
+          <div class="description" lang="zh">研究博客</div>
         </li>
       </ul>
 
       <h2>2025</h2>
       <ul class="item-list dated-list">
         <li>
-          <span class="date">Dec 2</span>
-          <div class="title"><a href="https://www.lesswrong.com/posts/Mxsy7wYvsCRv5dGrw/tastybench-toward-measuring-research-taste-in-llm" target="#">TastyBench: Toward Measuring Research Taste in LLM</a></div>
-          <div class="description">Research blog</div>
+          <span class="date"><span lang="en">Dec 2</span><span lang="zh">12月2日</span></span>
+          <div class="title" lang="en"><a href="https://www.lesswrong.com/posts/Mxsy7wYvsCRv5dGrw/tastybench-toward-measuring-research-taste-in-llm" target="#">TastyBench: Toward Measuring Research Taste in LLM</a></div>
+          <div class="title" lang="zh"><a href="https://www.lesswrong.com/posts/Mxsy7wYvsCRv5dGrw/tastybench-toward-measuring-research-taste-in-llm" target="#">TastyBench：迈向衡量大模型的研究品味</a></div>
+          <div class="description" lang="en">Research blog</div>
+          <div class="description" lang="zh">研究博客</div>
         </li>
 
         <li>
-          <span class="date">Aug 13</span>
-          <div class="title"><a href="https://substack.com/@yixiong/p-170850048" target="#">Takes on Forbes article: "Fear Of Super Intelligent AI Is Driving Harvard And MIT Students To Drop Out"</a></div>
-          <div class="description">Commentary on an article I was interviewed for</div>
+          <span class="date"><span lang="en">Aug 13</span><span lang="zh">8月13日</span></span>
+          <div class="title" lang="en"><a href="https://substack.com/@yixiong/p-170850048" target="#">Takes on Forbes article: "Fear Of Super Intelligent AI Is Driving Harvard And MIT Students To Drop Out"</a></div>
+          <div class="title" lang="zh"><a href="https://substack.com/@yixiong/p-170850048" target="#">对福布斯文章《对超级智能 AI 的恐惧正促使哈佛和 MIT 学生退学》的看法</a></div>
+          <div class="description" lang="en">Commentary on an article I was interviewed for</div>
+          <div class="description" lang="zh">对一篇采访了我的文章的评论</div>
         </li>
 
         <li>
-          <span class="date">Jul 2</span>
-          <div class="title"><a href="https://substack.com/@yixiong/p-165928528" target="#">It's (surprisingly) difficult to get college students to seriously think about AI.</a></div>
-          <div class="description">Thoughts on my university field building experience</div>
+          <span class="date"><span lang="en">Jul 2</span><span lang="zh">7月2日</span></span>
+          <div class="title" lang="en"><a href="https://substack.com/@yixiong/p-165928528" target="#">It's (surprisingly) difficult to get college students to seriously think about AI.</a></div>
+          <div class="title" lang="zh"><a href="https://substack.com/@yixiong/p-165928528" target="#">让大学生认真思考 AI（出乎意料地）困难</a></div>
+          <div class="description" lang="en">Thoughts on my university field building experience</div>
+          <div class="description" lang="zh">关于我在大学做领域建设的一些思考</div>
         </li>
 
         <li>
-          <span class="date">Jun 6</span>
-          <div class="title"><a href="https://www.lesswrong.com/posts/Ckhek3mXXq7TWvvEh/lessons-from-a-year-of-university-ai-safety-field-building" target="#">Lessons from a year of university AI safety field building</a></div>
-          <div class="description">Organizational update from Georgia Tech AISI</div>
+          <span class="date"><span lang="en">Jun 6</span><span lang="zh">6月6日</span></span>
+          <div class="title" lang="en"><a href="https://www.lesswrong.com/posts/Ckhek3mXXq7TWvvEh/lessons-from-a-year-of-university-ai-safety-field-building" target="#">Lessons from a year of university AI safety field building</a></div>
+          <div class="title" lang="zh"><a href="https://www.lesswrong.com/posts/Ckhek3mXXq7TWvvEh/lessons-from-a-year-of-university-ai-safety-field-building" target="#">一年大学 AI 安全领域建设的经验教训</a></div>
+          <div class="description" lang="en">Organizational update from Georgia Tech AISI</div>
+          <div class="description" lang="zh">佐治亚理工 AISI 组织动态</div>
         </li>
 
       </ul>
@@ -120,9 +157,11 @@
       <h2>2024</h2>
       <ul class="item-list dated-list">
         <li>
-          <span class="date">Nov 14</span>
-          <div class="title"><a href="https://substack.com/@yixiong/p-151628486" target="#">College technical AI safety hackathon retrospective - Georgia Tech</a></div>
-          <div class="description">Reflection on hosting an AI alignment track at Georgia Tech's AI hackathon</div>
+          <span class="date"><span lang="en">Nov 14</span><span lang="zh">11月14日</span></span>
+          <div class="title" lang="en"><a href="https://substack.com/@yixiong/p-151628486" target="#">College technical AI safety hackathon retrospective - Georgia Tech</a></div>
+          <div class="title" lang="zh"><a href="https://substack.com/@yixiong/p-151628486" target="#">大学技术 AI 安全黑客马拉松回顾 - 佐治亚理工</a></div>
+          <div class="description" lang="en">Reflection on hosting an AI alignment track at Georgia Tech's AI hackathon</div>
+          <div class="description" lang="zh">在佐治亚理工 AI 黑客马拉松中举办 AI 对齐赛道的反思</div>
         </li>
       </ul>
     </section>

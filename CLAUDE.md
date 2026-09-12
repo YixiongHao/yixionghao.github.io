@@ -39,5 +39,54 @@ HTML/CSS only (no frameworks unless justified)
 **File Structure:**
 - index.html (main page)
 - styles.css (shared styles)
+- lang.js (EN/中文 switch, loaded in every page's `<head>`)
+- check-i18n.py (bilingual parity check, see below)
 - writing/index.html
 - projects/index.html
+- resources/index.html
+
+## Bilingual content (EN / 中文) — MUST keep in sync
+
+The site is bilingual. There are no separate Chinese pages: every page holds
+both languages and `lang.js` shows one of them (preference stored in
+localStorage, applied before first paint; toggle is the EN / 中文 pills on the
+left rail, mirroring the nav on the right).
+
+**Convention (enforced by `check-i18n.py`, which also runs automatically as a
+PostToolUse hook after any HTML edit):**
+
+- Every translatable block inside `<main>` appears twice, adjacent, same tag:
+  `<p lang="en">…</p>` immediately followed by `<p lang="zh">…</p>`.
+  Same for `<li>`, `<div class="title">`, `<div class="description">`, etc.
+- For elements that must stay single (nav links, `<h2 id="…">`, `span.date`,
+  `div.venue`, footer link labels) put the pair *inside* as
+  `<span lang="en">…</span><span lang="zh">…</span>`.
+- Pairs never nest. Shared/untranslated content (author lists, `ICAIE 2022`,
+  h2 years, images, video) carries no `lang` attribute.
+- Page `<title>` gets its Chinese version via `data-zh="…"` on the tag.
+- Never put `lang` on the toggle buttons (they live inside `<main>` and would
+  be hidden).
+
+**Whenever English content is added or changed, update (or add) the matching
+`lang="zh"` block in the same edit.** Translate into natural Simplified
+Chinese; keep proper nouns, org names, people's names, acronyms (CAIS, RFI,
+TLDR, arXiv, venue names) in their original form. Dates: `Sep 6` → `9月6日`.
+Run `python check-i18n.py` before committing; it exits non-zero if any
+`lang="en"` block lacks its `lang="zh"` twin (or vice versa).
+
+**Stale-translation detection.** `i18n-state.json` (committed) holds a
+fingerprint of every English block's text as of the last time its Chinese was
+confirmed. If an English block's text changes, the check (and the hook) flags
+it as stale even though the pair structure is intact. Workflow when the user
+says they edited English text, or the hook reports a stale block:
+
+1. Read the flagged English block and rewrite its `lang="zh"` twin.
+2. Run `python check-i18n.py --accept` to re-record fingerprints.
+   (`--accept` refuses to run while structural problems exist.)
+
+Never run `--accept` without actually updating the Chinese first: it is the
+statement "the Chinese matches the English right now".
+
+Fonts: Inter has no CJK glyphs, so `Noto Sans SC` is loaded from Google Fonts
+and sits after Inter in the font stack (Latin stays Inter, Chinese falls
+through to Noto).
