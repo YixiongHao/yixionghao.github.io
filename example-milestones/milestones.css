@@ -1,0 +1,541 @@
+/* Three capability curves - page-scoped styles.
+   Inherits typeface, body scale, link colour and layout mechanics from
+   ../styles.css. Only what this page adds lives here.
+
+   Two things must survive any re-skin:
+     - the three DOMAIN accents (set per section as --accent in the generated
+       markup) are how a reader tracks which timeline they are in;
+     - the three GRADE colours are a separate scale, never reused as accents.
+   The moss domain accent and the green grade colour are close by design and
+   never appear adjacent. If the palette is re-mapped, re-check that grade and
+   domain colours stay separable under deuteranopia and protanopia. */
+
+:root {
+  /* Grade scale. Amber is darkened from the prototype's #9A6A12 to clear AA
+     against the site's beige background. */
+  --grade-ind: #1C6A56;
+  --grade-dev: #7A5310;
+  --grade-obs: #5A5F86;
+  --grade-ph: #8a8a8a;
+  --rule: #d9d2c4;
+}
+
+/* The timeline needs more room than the site's 640px reading column. */
+main.wide {
+  max-width: 1100px;
+}
+
+/* Provenance notice. First thing in the column, above the title, and
+   deliberately the loudest element on the page: everything below it is machine
+   generated and unverified, and must not be mistaken for research. */
+.tl-notice {
+  max-width: 640px;
+  border: 1px solid #8a2a2a;
+  border-left-width: 4px;
+  background: rgba(138, 42, 42, 0.05);
+  padding: 0.85rem 1rem;
+  margin-bottom: 2rem;
+}
+
+.tl-notice-h {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8a2a2a;
+  margin-bottom: 0.25rem;
+}
+
+.tl-notice-b {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  margin-bottom: 0;
+}
+
+/* Masthead */
+.tl-masthead {
+  margin-bottom: 2rem;
+}
+
+.tl-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.tl-title {
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.tl-masthead .intro {
+  max-width: 640px;
+}
+
+/* Grade legend. Without it the coloured dots are noise, so it stays directly
+   below the masthead. */
+.tl-legend {
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 0.85rem 0;
+  margin-bottom: 2.5rem;
+}
+
+.tl-legend-h {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 0.4rem;
+}
+
+.tl-legend-item {
+  font-size: 0.9rem;
+  margin-bottom: 0.15rem;
+}
+
+.tl-legend-label {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.tl-legend-def {
+  color: var(--text-secondary);
+}
+
+/* Grade dot. Colour never carries meaning alone: every dot is paired with the
+   legend and with a text grade tag in the panel it opens. */
+.tl-dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--grade-ph);
+  flex: none;
+}
+
+.tl-dot[data-grade="ind"] { background: var(--grade-ind); }
+.tl-dot[data-grade="dev"] { background: var(--grade-dev); }
+.tl-dot[data-grade="obs"] { background: var(--grade-obs); }
+.tl-dot[data-grade="ph"]  { background: var(--grade-ph); }
+
+.tl-legend-item .tl-dot {
+  margin-right: 0.4rem;
+}
+
+/* Domain section */
+.tl-domain {
+  margin-bottom: 3.5rem;
+}
+
+.tl-kicker {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.15rem;
+}
+
+.tl-h {
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+  max-width: 26ch;
+}
+
+.tl-thesis {
+  max-width: 640px;
+  margin-bottom: 1.5rem;
+}
+
+.tl-caveat {
+  max-width: 640px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  border-left: 2px solid var(--rule);
+  padding-left: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+/* Rail. Built by milestones.js and revealed only when the container is wide
+   enough; the accordion below is the no-JS and narrow-container form. */
+.tl-rail-wrap {
+  position: relative;
+  height: 210px;
+  margin: 0.5rem 0 1.25rem;
+}
+
+.tl-rail-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--rule);
+}
+
+/* Node width is capped at 11% of the rail as well as at 142px. The tightest
+   same-side pair on this data is the biology rail's Dec 2025 and Jun 2026
+   labels, 11.48% apart; a fixed 142px box overlaps them at every container
+   width the page uses, so the percentage cap is what actually prevents the
+   collision. Recompute the tightest gap if milestones are added or re-dated. */
+.tl-node {
+  position: absolute;
+  top: 50%;
+  width: min(142px, 11%);
+  transform: translateX(-50%);
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+
+.tl-node-mark {
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  margin-left: -4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--background);
+  border: 1.5px solid var(--text-secondary);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.tl-node-stem {
+  position: absolute;
+  left: 50%;
+  width: 1px;
+  height: 14px;
+  background: var(--rule);
+}
+
+/* Labels alternate above and below the line. Several 2026 milestones sit
+   within a few percent of one another and same-side labels would overlap. */
+.tl-node[data-side="above"] .tl-node-stem { bottom: 4px; }
+.tl-node[data-side="below"] .tl-node-stem { top: 4px; }
+
+.tl-node-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  line-height: 1.25;
+}
+
+.tl-node[data-side="above"] .tl-node-label { bottom: 20px; }
+.tl-node[data-side="below"] .tl-node-label { top: 20px; }
+
+.tl-node-date {
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.tl-node-short {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.tl-node:hover .tl-node-mark,
+.tl-node:focus-visible .tl-node-mark {
+  border-color: var(--accent);
+}
+
+.tl-node[aria-expanded="true"] .tl-node-mark {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.tl-node[aria-expanded="true"] .tl-node-short {
+  color: var(--accent);
+}
+
+.tl-node:focus-visible,
+.tl-acc-btn:focus-visible,
+.tl-sources a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Detail panel. min-height keeps the page from jumping as the reader moves
+   across nodes; recheck it after any type-scale change. */
+.tl-panel {
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+  min-height: 290px;
+  max-width: 720px;
+}
+
+.tl-panel-t {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.tl-panel-date {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 0.1rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tl-panel-in {
+    animation: tl-rise 220ms ease-out;
+  }
+}
+
+@keyframes tl-rise {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* The finding / context split. A reader skimming only the primary-colour text
+   still gets an accurate picture. */
+.tl-finding {
+  color: var(--text-primary);
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.tl-context,
+.tl-why {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.tl-why::before {
+  content: "Why this grade: ";
+  font-weight: 500;
+}
+
+html.zh .tl-why::before {
+  content: "评级理由：";
+}
+
+.tl-grade {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.1rem 0.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--background);
+  background: var(--grade-ph);
+}
+
+.tl-grade-ind { background: var(--grade-ind); }
+.tl-grade-dev { background: var(--grade-dev); }
+.tl-grade-obs { background: var(--grade-obs); }
+
+.tl-grade-placeholder {
+  background: transparent;
+  color: #8a2a2a;
+  border: 1px dashed #8a2a2a;
+}
+
+.tl-sources {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+  word-spacing: 0.2rem;
+}
+
+.tl-sources-label {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.tl-sources a {
+  font-size: 0.85rem;
+}
+
+.tl-sources a:hover {
+  color: var(--accent);
+}
+
+.tl-pending {
+  font-style: italic;
+}
+
+/* Accordion: the no-JS form, and the form used below 620px of container
+   width. Rendered at build time from the same data as the rail. */
+.tl-item {
+  border-top: 1px solid var(--rule);
+}
+
+.tl-item:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.tl-item-h {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.tl-acc-btn {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.6rem 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+.tl-acc-btn .tl-dot {
+  align-self: center;
+}
+
+.tl-acc-btn .tl-date {
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  flex: none;
+  min-width: 6.5rem;
+}
+
+.tl-item-t {
+  font-weight: 500;
+}
+
+.tl-acc-btn[aria-expanded="true"] .tl-item-t {
+  color: var(--accent);
+}
+
+.tl-acc-body {
+  padding: 0 0 1rem 7rem;
+  max-width: 760px;
+}
+
+/* Rail hint, between the rail and the panel. Hidden until the rail is in
+   play, since it describes an interaction the accordion does not have. */
+.tl-hint {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+/* Reading notes */
+.tl-notes {
+  border-top: 1px solid var(--rule);
+  padding-top: 1.5rem;
+  max-width: 640px;
+}
+
+.tl-notes-h {
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.tl-note {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  column-gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.tl-note-n {
+  grid-row: 1 / span 2;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.tl-note-t {
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 0.1rem;
+}
+
+.tl-note-b {
+  font-size: 0.9rem;
+}
+
+.tl-colophon {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+/* Narrow containers keep the accordion; milestones.js measures the section's
+   own width, not the viewport's, so the rail also appears correctly inside a
+   constrained preview pane. */
+@media (max-width: 900px) {
+  .tl-node-short {
+    font-size: 0.78rem;
+  }
+
+  .tl-node-date {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .tl-acc-btn {
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .tl-acc-body {
+    padding-left: 0;
+  }
+
+  .tl-panel {
+    min-height: 0;
+  }
+}
+
+/* People print this kind of page for briefings: expand every milestone, drop
+   the rail and the chrome, and show link targets. */
+@media print {
+  .nav-rail,
+  .lang-rail,
+  .site-links,
+  .tl-rail-wrap,
+  .tl-panel {
+    display: none !important;
+  }
+
+  .tl-acc-body[hidden] {
+    display: block !important;
+  }
+
+  .tl-sources a::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    word-break: break-all;
+  }
+
+  .tl-domain {
+    break-inside: avoid;
+  }
+}
